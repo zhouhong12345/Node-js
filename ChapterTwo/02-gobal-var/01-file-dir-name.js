@@ -1,3 +1,4 @@
 #!/usr/bin/node
 
-console.log('hello world');
+console.log('dir name:',__dirname);
+console.log('file name:',__filename);
