@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/zhouhong12345/Node-js/issues"
   },
-  "homepage": "https://github.com/zhouhong12345/Node-js#readme"
+  "homepage": "https://github.com/zhouhong12345/Node-js#readme",
+  "dependencies": {
+    "lsof": "^0.1.0"
+  }
 }
