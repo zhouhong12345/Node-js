@@ -4,11 +4,11 @@
 const http = require('http'),
       log=console.log;
 
-var items=[];
+var items=items.loadDate();
 
 http.createServer((req, res) => {
     log(`${req.method} ${req.url} ${req.httpVersion}`);
-    log(req.headers);
+    log(req.header);
     log('');
 
     switch(req.method){
@@ -27,6 +27,7 @@ http.createServer((req, res) => {
       default:
         err(res);
     }
+    res.end('OK!');
 }).listen(8080);
 
 function select(req,res){
@@ -38,35 +39,17 @@ function select(req,res){
   res.end(data);//向客户端发一个响应
 }
 function update(req,res){
-  //parse url get id修改id,validate id,type and range验证一下id是否合法
-  //parse req get content获得修改前的数据validate content now blank
-  //modify items, items[id]=new content修改数组
   res.end(req.method);
 }
 function insert(req,res){
-  var item='';
-  req.on('data',(data)=>{
-    item +=data;
-
-  });
-  req.on('end',()=>{
-    if(typeof item !=='undefined'){
-      items.push(item);
-      res.end('Insert OK!');
-    }
-    else{
-      res.end('Insert Error!');
-    }
-  });
+  res.end(req.method);
 }
 function remove(req,res){
-  var id=req.url.slice(1,req.url.length);
-  //validate id:1.type2.range
-  
-  //del items[id]
-  items.splice(id,1);
-  res.end('Delete OK!') ;
+  res.end(req.method) ;
 }
 function err(){
   res.end('Somethind Wrong!');
 }
+
+function 
+
