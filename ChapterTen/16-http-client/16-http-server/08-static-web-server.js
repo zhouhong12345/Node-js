@@ -3,13 +3,16 @@
 const http = require('http'),
       log  = console.log,
       fs   = require('fs');
-
+var items=[];
 http.createServer((req, res) => {
   log(`${req.method} ${req.url} HTTP/${req.httpVersion}`);
   log(req.headers);
   log('');
-
+  
   var file = __dirname + req.url;
+  log(file);
+  
+
 
   fs.readFile(file, (err, data) => {
     if(err) {
@@ -20,4 +23,6 @@ http.createServer((req, res) => {
       res.end(data);
     }
   });
-}).listen(3000);
+
+}).listen(3001);
+

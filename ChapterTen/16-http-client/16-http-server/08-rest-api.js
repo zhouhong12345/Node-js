@@ -47,6 +47,7 @@ function insert(req,res){
   var item='';
   req.on('data',(data)=>{
     item +=data;
+    log(item);
 
   });
   req.on('end',()=>{
