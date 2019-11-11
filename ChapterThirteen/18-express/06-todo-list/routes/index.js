@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/',function(req,res){
+  console.log(req.body);
   if(req.body.item !=='') items.push(req.body.item);
   res.render('index',{items:items});
 });
