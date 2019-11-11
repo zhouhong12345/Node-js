@@ -16,7 +16,7 @@
     fetch('http://localhost:3000/loginTo').then(function(res){
       res.text().then(function(txt){
           if(JSON.parse(txt)[0].judge==true){
-             window.location.href='http://192.168.239.144:3000/list';
+             window.location.href='http://localhost:3000/list';
           }
           else{
           alert('用户名或密码错误！');
